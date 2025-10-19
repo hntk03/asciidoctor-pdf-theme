@@ -1,0 +1,65 @@
+extend: default
+
+colors:
+  black: #000000
+  gray: #F0F0F0
+
+font:
+  catalog:
+    NotoSansJp:
+      normal:
+      bold:
+      italic:
+      bold_italic:
+
+base:
+  font-family: NotoSansJp
+  align: left
+  line_height: 1.5
+
+page:
+  size: A4
+  margin: [25mm, 20mm, 25mm, 20mm]
+
+header:
+  height: 20mm
+  border-color: $colors-black
+  border-width: 0.1
+  vertical-align: [bottom, -2]
+
+  recto: &shared_header
+    right:
+      content: '{chapter-title}'
+  verso: *shared_header
+
+prose: margin_bottom: $base_font_size
+
+heading:
+
+section:
+  indent: [5mm, 0]
+
+image:
+  caption:
+    align: center
+
+table:
+  border-color: $colors-black
+  grid-color: $colors-black
+  grid-width: $table-border-width
+  caption:
+    align: center
+
+  head:
+    backgound-color: $colors-gray
+    border-bottom-width: $table-border-width
+
+footer:
+  height: $header-height
+  border-color: $colors-black
+  border-width: $header-border-width
+
+  recto: &shared_footer
+    center:
+      content: '{page-number}'
+  verso: *shared_footer
